@@ -1,0 +1,102 @@
+# ==============================
+# 🐍 Python
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Pip / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# ==============================
+# 📓 Jupyter Notebooks
+# ==============================
+.ipynb_checkpoints/
+
+# ==============================
+# 📊 Data (VERY IMPORTANT)
+# ==============================
+data/
+datasets/
+*.csv
+*.tsv
+*.xlsx
+*.json
+*.parquet
+
+# Allow small sample data if needed
+# !data/sample.csv
+
+# ==============================
+# 🤖 ML Models & Artifacts
+# ==============================
+models/
+*.pkl
+*.joblib
+*.h5
+*.hdf5
+*.pt
+*.pth
+*.onnx
+
+# ==============================
+# 📈 Experiment Tracking
+# ==============================
+mlruns/
+wandb/
+comet.ml/
+tensorboard_logs/
+logs/
+
+# ==============================
+# ⚙️ Config / Secrets
+# ==============================
+.env
+.env.*
+config.yaml
+secrets.yaml
+
+# ==============================
+# 🧪 Testing / Coverage
+# ==============================
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ==============================
+# 🧰 IDE / Editor
+# ==============================
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ==============================
+# 🖥️ OS Files
+# ==============================
+.DS_Store
+Thumbs.db
+
+# ==============================
+# 🐳 Docker
+# ==============================
+*.log
+docker-compose.override.yml
+
+# ==============================
+# 📦 Misc
+# ==============================
+*.log
+tmp/
+temp/
