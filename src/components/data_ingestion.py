@@ -4,9 +4,16 @@ from dataclasses import dataclass
 from sklearn.model_selection import train_test_split
 import os 
 import sys
-from src.config_varibles import DataIngestionConfig
+
+from src.components.data_trainsformation import DataTransformation
 import pandas as pd 
 
+
+@dataclass
+class DataIngestionConfig : 
+    train_data_path : str = os.path.join('artifacts', 'train.csv')
+    test_data_path : str = os.path.join('artifacts', 'test.csv')
+    raw_data_path : str = os.path.join('artifacts', 'raw.csv')
 
 class DataIngestion:
     def __init__(self):
@@ -41,8 +48,8 @@ class DataIngestion:
             logging.info('Data Ingestion Pipeline excuted successfully!')
 
             return (
-                train_set,
-                test_set
+                self.data_ingestion_config.train_data_path,
+                self.data_ingestion_config.test_data_path
             )
         except Exception as e :
             logging.info('Error Occured : ' ,e)
@@ -53,4 +60,6 @@ class DataIngestion:
 if __name__=="__main__":
     ingestion_object = DataIngestion()
     train_set , test_set = ingestion_object.initiate_data_ingestion()
+    transformation_object = DataTransformation()
+    transformation_object.initiate_data_transformation(train_set,test_set)
 
